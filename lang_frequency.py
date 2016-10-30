@@ -7,7 +7,7 @@ def load_data(filepath):
     if not os.path.exists(filepath) or os.path.isdir(filepath):
         return None
 
-    with open(filepath,'r') as text_file:
+    with open(filepath, 'r') as text_file:
         text = text_file.read()
         return text
 
@@ -23,10 +23,9 @@ if __name__ == '__main__':
         filepath = input('Введите путь к файлу: ')
         data = load_data(filepath)
 
-        if data != None:
+        if data is not None:
             print(get_most_frequent_words(data))
             break
 
         else:
             print('Некорректный адрес файла, повторите ввод')
-
