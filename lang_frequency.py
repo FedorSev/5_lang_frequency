@@ -18,13 +18,20 @@ def get_most_frequent_words(text):
     return words
 
 
+def print_most_frequent_words(words):
+    print('MOST FREQUENT WORDS:')
+    print('--------------------')
+    for word in words:
+        print(word[0] + '\t- ' + str(word[1]))
+
+
 if __name__ == '__main__':
     while True:
         filepath = input('Введите путь к файлу: ')
         data = load_data(filepath)
 
         if data is not None:
-            print(get_most_frequent_words(data))
+            print_most_frequent_words(get_most_frequent_words(data))
             break
 
         else:
